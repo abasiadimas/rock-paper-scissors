@@ -30,8 +30,10 @@ Project is: \_Ongoing
 
 ## Version History
 
--1.0
-Initial Release
+-1.5
+Console Game Version
+
+It is currently possible to play the game via your browser's console
 
 ## Authors
 
