@@ -3,9 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="./css/index.css" />
     <title>Rock Paper Scissors</title>
   </head>
   <body>
+    <main>
+      <div class="container">
+        <div class="general-info">
+          <h1 class="main-title" id="game-title">Rock, Paper, Scissors</h1>
+          <div class="how-to-play" id="instructions">
+            <p class="win-points">
+              The first player to reach 5 points wins the game. Good luck!
+            </p>
+            <p>Choose your option below:</p>
+          </div>
+        </div>
+        <div class="game-choices" id="choices">
+          <button class="choice-btn" id="rock">
+            <i class="fa-regular fa-hand-back-fist fa-rotate-90"></i>
+          </button>
+          <button class="choice-btn" id="paper">
+            <i class="fa-regular fa-hand"></i>
+          </button>
+          <button class="choice-btn" id="scissors">
+            <i class="fa-regular fa-hand-scissors"></i>
+          </button>
+        </div>
+        <div class="round"><p id="currentRound"></p></div>
+        <div class="icon-display" id="icon-display">
+          <div id="humanIconDisplay"></div>
+          <div id="versusDisplay"></div>
+          <div id="computerIconDisplay"></div>
+        </div>
+        <div class="final-result" id="result"></div>
+        <div class="scores" id="scoreboard">
+          <p class="atomic-scores">Human <span id="user-score"></span></p>
+          <p class="atomic-scores">
+            Computer <span id="computer-score"></span>
+          </p>
+        </div>
+
+        <button class="reset-game" id="play-again">Play Again</button>
+      </div>
+    </main>
     <script src="./js/index.js"></script>
   </body>
 </html>

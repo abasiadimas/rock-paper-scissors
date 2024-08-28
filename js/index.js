@@ -1,3 +1,14 @@
+const choices = document.querySelectorAll(".choice-btn");
+const result = document.querySelector("#result");
+const printUserScore = document.querySelector("#user-score");
+const printComputerScore = document.querySelector("#computer-score");
+const printRound = document.querySelector("#currentRound");
+const iconDisplayDiv = document.querySelector("#icon-display");
+const humanIconDisplay = document.querySelector("#humanIconDisplay");
+const versusDisplay = document.querySelector("#versusDisplay");
+const computerIconDisplay = document.querySelector("#computerIconDisplay");
+const resetGame = document.querySelector("#play-again");
+
 function getComputerChoice() {
   let random = Math.floor(Math.random() * 3 + 1);
   if (random === 1) {
@@ -7,20 +18,6 @@ function getComputerChoice() {
   } else {
     return "scissors";
   }
-}
-
-function getHumanChoice() {
-  let userInput = "";
-
-  while (
-    userInput !== "rock" &&
-    userInput !== "paper" &&
-    userInput !== "scissors"
-  ) {
-    userInput = prompt("Rock, Paper, Scissors").trim().toLowerCase();
-  }
-
-  return userInput;
 }
 
 function winningScenario(player1, player2) {
@@ -36,59 +33,134 @@ function playGame() {
   let computerScore = 0;
   let round = 0;
 
-  function playRound(humanChoice, computerChoice) {
-    console.log(`Round: ${round + 1}`);
-    console.log(
-      `Human: [${
-        humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1)
-      }] vs Computer: [${
-        computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)
-      }]`
-    );
+  printUserScore.textContent = 0;
+  printComputerScore.textContent = 0;
+
+  choices.forEach((choiche) => {
+    choiche.addEventListener("click", function () {
+      playRound(this.id);
+    });
+  });
+
+  function playRound(humanChoice) {
+    const computerChoice = getComputerChoice();
+    printRound.textContent = `Round: ${round + 1}`;
+
+    displayIcons(humanChoice, computerChoice);
+
     if (humanChoice === computerChoice) {
-      console.log("It's a tie!");
+      result.textContent = "It's a tie";
     } else if (winningScenario(humanChoice, computerChoice)) {
-      console.log("Human wins!");
+      result.textContent = "Human wins";
       humanScore++;
+      printUserScore.textContent = humanScore;
     } else {
-      console.log("Computer wins!");
+      result.textContent = "Computer wins";
       computerScore++;
+      printComputerScore.textContent = computerScore;
     }
 
-    console.log(" ");
-    console.log(`Human score: ${humanScore}`);
-    console.log(`Computer score: ${computerScore}`);
-    console.log(" ");
     round++;
-  }
 
-  for (let round = 0; round < 5; round++) {
-    if (
-      round === 4 &&
-      (humanScore === computerScore ||
-        Math.abs(humanScore - computerScore) === 1)
-    ) {
-      console.log("Last round! Choose wisely...");
-      const humanSelection = getHumanChoice();
-      const computerSelection = getComputerChoice();
-      playRound(humanSelection, computerSelection);
-    } else {
-      const humanSelection = getHumanChoice();
-      const computerSelection = getComputerChoice();
-      playRound(humanSelection, computerSelection);
+    if (humanScore === 5) {
+      result.textContent = `Congratulations! You won the game with ${humanScore} - ${computerScore} score.`;
+      result.setAttribute("style", "font-style: italic; color: green");
+      printUserScore.style.color = "green";
+      printComputerScore.style.color = "red";
+      disableButtons();
+      resetGame.style.display = "inline-block";
+    } else if (computerScore === 5) {
+      result.textContent = `Sorry! You lost the game with ${humanScore} - ${computerScore} score.`;
+      result.setAttribute("style", "font-style: italic; color: red");
+      printUserScore.style.color = "red";
+      printComputerScore.style.color = "green";
+      disableButtons();
+      resetGame.style.display = "inline-block";
     }
-  }
 
-  if (humanScore > computerScore) {
-    console.log(
-      `Congratulations! You won the game with ${humanScore} - ${computerScore} score!`
-    );
-  } else if (computerScore > humanScore) {
-    console.log(
-      `Pfff! You lost the game with ${humanScore} - ${computerScore} score!`
-    );
-  } else {
-    console.log(`It's a tie game with ${humanScore} - ${computerScore} score!`);
+    function displayIcons(humanChoice, computerChoice) {
+      humanIconDisplay.innerHTML = "";
+      computerIconDisplay.innerHTML = "";
+      versusDisplay.innerHTML = "";
+
+      const humanIcon = document.createElement("i");
+      if (humanChoice === "rock") {
+        humanIcon.classList.add(
+          "fa-regular",
+          "fa-hand-" + humanChoice,
+          "fa-rotate-90"
+        );
+      } else if (humanChoice === "scissors") {
+        humanIcon.classList.add(
+          "fa-regular",
+          "fa-hand-" + humanChoice,
+          "flip-scissors"
+        );
+      } else {
+        humanIcon.classList.add(
+          "fa-regular",
+          "fa-hand-" + humanChoice,
+          "fa-rotate-90"
+        );
+      }
+      humanIconDisplay.appendChild(humanIcon);
+
+      const versus = document.createElement("span");
+      versus.textContent = "vs";
+      versusDisplay.appendChild(versus);
+
+      const computerIcon = document.createElement("i");
+      if (computerChoice === "rock") {
+        computerIconDisplay.classList.add("fa-rotate-270");
+        computerIcon.classList.add(
+          "fa-regular",
+          "fa-hand-" + computerChoice,
+          "fa-flip-horizontal"
+        );
+      } else if (computerChoice === "paper") {
+        computerIconDisplay.classList.add("fa-rotate-270");
+        computerIcon.classList.add(
+          "fa-regular",
+          "fa-hand-" + computerChoice,
+          "fa-flip-horizontal"
+        );
+      } else {
+        computerIconDisplay.classList.remove("fa-rotate-270");
+        computerIconDisplay.classList.add("fa-rotate-0");
+        computerIcon.classList.add("fa-regular", "fa-hand-" + computerChoice);
+      }
+      computerIconDisplay.appendChild(computerIcon);
+    }
+
+    function disableButtons() {
+      choices.forEach((button) => {
+        button.disabled = true;
+      });
+    }
+
+    function enableButtons() {
+      choices.forEach((button) => {
+        button.disabled = false;
+      });
+    }
+
+    resetGame.addEventListener("click", function () {
+      result.textContent = "";
+      result.setAttribute("style", "font-style: normal; color: #333");
+      printRound.textContent = "";
+      humanIconDisplay.innerHTML = "";
+      versusDisplay.innerHTML = "";
+      computerIconDisplay.innerHTML = "";
+      printUserScore.style.color = "#333";
+      printComputerScore.style.color = "#333";
+      humanScore = 0;
+      computerScore = 0;
+      round = 0;
+      printUserScore.textContent = 0;
+      printComputerScore.textContent = 0;
+      resetGame.style.display = "none";
+      enableButtons();
+    });
   }
 }
 

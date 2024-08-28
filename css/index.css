@@ -1,0 +1,123 @@
+body {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 90vh;
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.general-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-title {
+  font-size: 2rem;
+}
+
+.how-to-play {
+  font-size: 1.3rem;
+}
+
+.win-points {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-bottom: 35px;
+}
+
+.game-choices {
+  margin: 20px 0;
+}
+
+.choice-btn {
+  width: 120px;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  background-color: #4a90e2;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.choice-btn:hover {
+  background-color: #357abd;
+}
+
+.flip-scissors {
+  transform: scaleX(-1);
+}
+
+.round {
+  font-size: 1.5rem;
+}
+
+.round p {
+  margin: 20px 0;
+}
+
+.icon-display {
+  display: flex;
+  justify-content: space-around;
+  width: 210px;
+  margin: 20px auto;
+  font-size: 1.7rem;
+}
+
+.icon-display div {
+  width: 70px;
+}
+
+.final-result {
+  font-size: 1.5em;
+  margin: 20px 0 30px 0;
+}
+
+.scores {
+  margin-top: 30px;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+  margin: 0 auto;
+  border: 2px solid #4a90e2;
+  border-radius: 10px;
+}
+
+.atomic-scores {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 80px;
+}
+
+.reset-game {
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 15px 20px;
+  cursor: pointer;
+  font-size: 1.1em;
+  display: none;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  background-color: #4a90e2;
+  color: #fff;
+}
+
+.reset-game:hover {
+  background-color: #357abd;
+}
