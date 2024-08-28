@@ -46,7 +46,7 @@ body {
 }
 
 .game-choices p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .choice-btn {
@@ -190,12 +190,22 @@ body {
     height: 70px;
   }
 
-  .round {
-    font-size: 1.3rem;
+  .hidden-logic {
+    margin: 5px 0;
+  }
+
+  .game-choices p {
+    font-size: 1.2rem;
+    margin: 0 0 15px 0;
   }
 
   .final-result {
     font-size: 1.3em;
     width: 90%;
+  }
+
+  .choice-btn {
+    padding: 10px;
+    width: 100px;
   }
 }
