@@ -16,10 +16,24 @@
             <p class="win-points">
               The first player to reach 5 points wins the game. Good luck!
             </p>
-            <p>Choose your option below:</p>
           </div>
+          <div class="scores" id="scoreboard">
+            <p class="atomic-scores">Human <span id="user-score"></span></p>
+            <p class="atomic-scores">
+              Computer <span id="computer-score"></span>
+            </p>
+          </div>
+          <div class="hidden-logic">
+            <div class="round"><p id="currentRound"></p></div>
+            <div class="icon-display" id="icon-display">
+              <div id="humanIconDisplay"></div>
+              <div id="versusDisplay"></div>
+              <div id="computerIconDisplay"></div>
+            </div>
+            <div class="final-result" id="result"></div>
         </div>
         <div class="game-choices" id="choices">
+          <p>Choose your option:</p>
           <button class="choice-btn" id="rock">
             <i class="fa-regular fa-hand-back-fist fa-rotate-90"></i>
           </button>
@@ -29,19 +43,6 @@
           <button class="choice-btn" id="scissors">
             <i class="fa-regular fa-hand-scissors"></i>
           </button>
-        </div>
-        <div class="round"><p id="currentRound"></p></div>
-        <div class="icon-display" id="icon-display">
-          <div id="humanIconDisplay"></div>
-          <div id="versusDisplay"></div>
-          <div id="computerIconDisplay"></div>
-        </div>
-        <div class="final-result" id="result"></div>
-        <div class="scores" id="scoreboard">
-          <p class="atomic-scores">Human <span id="user-score"></span></p>
-          <p class="atomic-scores">
-            Computer <span id="computer-score"></span>
-          </p>
         </div>
 
         <button class="reset-game" id="play-again">Play Again</button>
