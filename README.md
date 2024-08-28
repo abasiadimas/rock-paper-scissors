@@ -1,7 +1,7 @@
 # rock-paper-scissors
 
 > A simple Javascript game
-> Live
+> Live https://abasiadimas.github.io/rock-paper-scissors/
 
 ## Table of Contents
 
@@ -26,14 +26,14 @@
 
 ## Project Status
 
-Project is: \_Ongoing
+Project is: \_Testing
 
 ## Version History
 
--1.5
-Console Game Version
+-2.0
+Web App Game Version
 
-It is currently possible to play the game via your browser's console
+It is currently possible to play the game via the interactive User Interface.
 
 ## Authors
 
@@ -41,4 +41,4 @@ Anastasios Basiadimas
 
 ## Acknowledgements
 
-- This project was based on the "The Odin Project" bootcamp - (https://www.theodinproject.com/)
+- This project was based on the "The Odin Project" - (https://www.theodinproject.com/)
