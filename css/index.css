@@ -11,10 +11,10 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
-  height: 95vh;
+  height: 100vh;
   width: 70%;
   margin: 0 auto;
-  padding-top: 20px;
+  /* padding-top: 20px; */
 }
 
 .general-info {
@@ -115,8 +115,7 @@ body {
 
 .reset-game {
   width: 200px;
-  margin: 0 auto;
-  margin-top: 20px;
+  margin: 20px auto;
   padding: 15px 20px;
   cursor: pointer;
   font-size: 1.1em;
@@ -129,4 +128,74 @@ body {
 
 .reset-game:hover {
   background-color: #357abd;
+}
+
+/* media */
+
+@media screen and (max-width: 1250px) {
+  .scores {
+    font-size: 1.3em;
+    width: 250px;
+  }
+
+  .hidden-logic {
+    margin: 15px 0;
+  }
+
+  .round {
+    font-size: 1.3rem;
+  }
+
+  .round p {
+    margin: 10px 0;
+  }
+
+  .icon-display {
+    font-size: 1.5rem;
+  }
+
+  .final-result {
+    margin: 10px 0 10px 0;
+    font-size: 1.4em;
+  }
+
+  .game-choices {
+    margin: 10px 0;
+  }
+
+  .choice-btn {
+    font-size: 1.3rem;
+  }
+
+  .reset-game {
+    width: 180px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-title {
+    font-size: 1.5rem;
+  }
+
+  .win-points {
+    font-size: 1.1rem;
+  }
+
+  .scores {
+    font-size: 1.2em;
+    width: 200px;
+  }
+
+  .atomic-scores {
+    height: 70px;
+  }
+
+  .round {
+    font-size: 1.3rem;
+  }
+
+  .final-result {
+    font-size: 1.3em;
+    width: 90%;
+  }
 }
