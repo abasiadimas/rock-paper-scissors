@@ -202,6 +202,7 @@ body {
   .final-result {
     font-size: 1.3em;
     width: 90%;
+    margin: 0 auto;
   }
 
   .choice-btn {
