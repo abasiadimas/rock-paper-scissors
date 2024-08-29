@@ -5,7 +5,9 @@
 
 # Screenschots
 
-<img src="" width="" height="">
+<img src="./screenshots/main-frame.png" width="300px">
+<img src="./screenshots/playing-game.png" width="300px">
+<img src="./screenshots/play-again.png" width="300px">
 
 ## Table of Contents
 
