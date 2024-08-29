@@ -3,6 +3,10 @@
 > A simple Javascript game
 > Live https://abasiadimas.github.io/rock-paper-scissors/
 
+# Screenschots
+
+<img src="" width="" height="">
+
 ## Table of Contents
 
 - [General Information](#general-information)
@@ -26,7 +30,7 @@
 
 ## Project Status
 
-Project is: \_Testing
+Project is: \_Finished
 
 ## Version History
 
